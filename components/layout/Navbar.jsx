@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import MagneticButton from "../ui/MagneticButton";
 import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -21,16 +20,21 @@ export default function Navbar() {
 
       if (typeof window !== "undefined") {
         try {
-          gsap.registerPlugin(ScrollToPlugin);
-          gsap.to(window, {
-            duration: 1.2,
-            scrollTo: { y: 0, autoKill: true },
-            ease: "power3.inOut",
-            onComplete: () => {
-              window.scrollTo(0, 0);
-            },
+          // Dynamically load ScrollToPlugin to avoid SSR/build module resolution issues
+          import("gsap/ScrollToPlugin").then(({ ScrollToPlugin }) => {
+            gsap.registerPlugin(ScrollToPlugin);
+            gsap.to(window, {
+              duration: 1.2,
+              scrollTo: { y: 0, autoKill: true },
+              ease: "power3.inOut",
+              onComplete: () => {
+                window.scrollTo(0, 0);
+              },
+            });
+          }).catch(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
           });
-        } catch {
+        } catch (err) {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       }
