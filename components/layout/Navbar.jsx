@@ -5,12 +5,39 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import MagneticButton from "../ui/MagneticButton";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [theme, setTheme] = useState("dark");
+
+  const handleScrollToLanding = (e) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+
+      if (typeof window !== "undefined") {
+        try {
+          gsap.registerPlugin(ScrollToPlugin);
+          gsap.to(window, {
+            duration: 1.2,
+            scrollTo: { y: 0, autoKill: true },
+            ease: "power3.inOut",
+            onComplete: () => {
+              window.scrollTo(0, 0);
+            },
+          });
+        } catch {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+    } else {
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   useEffect(() => {
     // Scroll state trigger
@@ -79,7 +106,12 @@ export default function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
         {/* LOGO: Guaranteed to show dark mode logo (/logo_dark.png) in dark mode */}
-        <Link href="/" className="flex items-center group select-none">
+        <Link
+          href="/"
+          onClick={handleScrollToLanding}
+          className="flex items-center group select-none cursor-pointer"
+          title="Return to Landing Page"
+        >
           {/* Light Mode Logo (black text) */}
           <img
             src="/logo.png"
