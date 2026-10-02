@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Senior Product Engineer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-container": "#d6a9ff",
+                      "surface-container-highest": "#353437",
+                      "on-primary-fixed-variant": "#004395",
+                      "surface-dim": "#131315",
+                      "on-primary-fixed": "#001a42",
+                      "surface-container-lowest": "#0e0e10",
+                      "inverse-primary": "#005ac2",
+                      "secondary-container": "#6f00be",
+                      "on-secondary-fixed": "#2c0051",
+                      "on-primary-container": "#00285d",
+                      "error-container": "#93000a",
+                      "surface": "#131315",
+                      "surface-variant": "#353437",
+                      "background": "#131315",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "primary-fixed": "#d8e2ff",
+                      "surface-container-low": "#1c1b1d",
+                      "primary-container": "#4d8eff",
+                      "outline-variant": "#424754",
+                      "on-tertiary-fixed": "#002113",
+                      "on-primary": "#002e6a",
+                      "surface-container": "#201f22",
+                      "on-secondary-fixed-variant": "#6900b3",
+                      "inverse-on-surface": "#313032",
+                      "error": "#ffb4ab",
+                      "on-surface": "#e5e1e4",
+                      "on-secondary": "#490080",
+                      "outline": "#8c909f",
+                      "inverse-surface": "#e5e1e4",
+                      "tertiary": "#4edea3",
+                      "secondary": "#ddb7ff",
+                      "on-surface-variant": "#c2c6d6",
+                      "tertiary-fixed": "#6ffbbe",
+                      "surface-bright": "#39393b",
+                      "tertiary-container": "#00a572",
+                      "on-error": "#690005",
+                      "secondary-fixed-dim": "#ddb7ff",
+                      "surface-tint": "#adc6ff",
+                      "on-tertiary": "#003824",
+                      "on-background": "#e5e1e4",
+                      "secondary-fixed": "#f0dbff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "primary": "#adc6ff",
+                      "primary-fixed-dim": "#adc6ff",
+                      "on-tertiary-container": "#00311f",
+                      "surface-container-high": "#2a2a2c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1200px",
+                      "section-gap-md": "80px",
+                      "unit": "4px",
+                      "section-gap-lg": "160px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "code-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "body-md": [
+                              "Geist"
+                      ],
+                      "display": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "code-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #09090B;
+            color: #e5e1e4;
+        }
+        .glow-border {
+            position: relative;
+        }
+        .glow-border::before {
+            content: "";
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+            z-index: -1;
+            border-radius: inherit;
+        }
+        .dot-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Animations & Interactions */
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal-on-scroll {
+                opacity: 0;
+                transform: translateY(24px);
+                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .reveal-on-scroll.is-revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .delay-100 { transition-delay: 0.1s; }
+            .delay-200 { transition-delay: 0.2s; }
+            .delay-300 { transition-delay: 0.3s; }
+
+            .stagger-item {
+                opacity: 0;
+                transform: translateY(16px);
+                transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .stagger-parent.is-revealed .stagger-item {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .stagger-parent.is-revealed .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+            .stagger-parent.is-revealed .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+            .stagger-parent.is-revealed .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #adc6ff; /* primary color */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .nav-link::after { transition: none; }
+            .reveal-on-scroll, .stagger-item { opacity: 1 !important; transform: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-white/10">
+<div class="flex justify-between items-center h-16 px-8 max-w-container-max mx-auto">
+<div class="text-body-lg font-headline-md font-bold text-on-surface tracking-tighter">
+                DevArchitect
+            </div>
+<div class="hidden md:flex space-x-6">
+<a class="nav-link active text-primary font-bold pb-1 font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="nav-link text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Projects</a>
+<a class="nav-link text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Architecture</a>
+<a class="nav-link text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Blog</a>
+<a class="nav-link text-on-surface-variant font-medium font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">Experience</a>
+</div>
+<div class="hidden md:block">
+<a class="text-primary font-label-md text-label-md border border-outline-variant px-4 py-2 rounded hover:bg-white/5 transition-colors" href="#">Resume</a>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-8 pt-32 pb-20">
+<!-- Hero Section -->
+<section class="py-section-gap-md flex flex-col items-start gap-6">
+<div class="reveal-on-scroll inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant text-primary font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                Available for high-impact roles
+            </div>
+<h1 class="reveal-on-scroll delay-100 font-display text-display text-on-surface max-w-4xl tracking-tighter">
+                Building scalable products, AI-powered systems and modern web experiences.
+            </h1>
+<p class="reveal-on-scroll delay-200 font-headline-md text-headline-md text-on-surface-variant max-w-2xl">
+                Design, Architect, Build, Scale.
+            </p>
+<div class="reveal-on-scroll delay-300 flex flex-wrap gap-4 mt-8">
+<a class="bg-on-surface text-surface px-6 py-3 rounded font-label-md text-label-md hover:scale-[0.98] transition-transform shadow-[0_0_15px_rgba(173,198,255,0.2)]" href="#">View Projects</a>
+<a class="bg-transparent border border-outline-variant text-on-surface px-6 py-3 rounded font-label-md text-label-md hover:bg-white/5 transition-colors" href="#">Resume</a>
+</div>
+</section>
+<!-- Trust/Impact Grid -->
+<section class="py-section-gap-md reveal-on-scroll">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low border border-white/5 p-8 rounded-lg flex flex-col gap-2 transition-colors hover:bg-surface-container">
+<span class="font-display text-display text-primary">8+</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Years Exp</span>
+</div>
+<div class="bg-surface-container-low border border-white/5 p-8 rounded-lg flex flex-col gap-2 transition-colors hover:bg-surface-container">
+<span class="font-display text-display text-primary">50+</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Projects</span>
+</div>
+<div class="bg-surface-container-low border border-white/5 p-8 rounded-lg flex flex-col gap-2 transition-colors hover:bg-surface-container">
+<span class="font-display text-display text-primary">1M+</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Users Impacted</span>
+</div>
+</div>
+</section>
+<!-- Featured Work -->
+<section class="py-section-gap-md reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-lg mb-12">Featured Work</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project Card 1 -->
+<div class="glow-border bg-surface-container-low rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] hover:border-white/10">
+<div class="h-48 rounded bg-surface-dim overflow-hidden relative">
+<img class="object-cover w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-105" data-alt="A sophisticated digital dashboard interface displayed on a high-resolution screen in a dark, moody environment. The UI features complex data visualizations, neon blue accents, and deep obsidian backgrounds. The lighting is low-key, highlighting the crisp typography and modern glassmorphism elements of the dashboard. The overall aesthetic is highly technical, precise, and indicative of a powerful analytics platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFmRnLEWROjoZs6q1kue1Du-nr1FrEBWtTJ78RfNeeDZt9AykF4OnI0gpbXgU7NSqUJQNtcAiB0YC0521Jy_qFLJtF1NCv6nyiIHLlZEAhtr-7lAdtNf6yyRtkR_RVh6HARdy3rcI28mSeET_qaCJeKHaOjWTzxOLMOToJtnvPex9CSJt3-85oo6dKM-ubUSIdsYTXJHjk-3xXGc43Vw4km1gs84ILtvdye_abifGpxESrA9Z2HzN4DuqBH1jJvjlx1-G7DuC8a1s"/>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors">Enterprise Analytics Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Architected a real-time data visualization dashboard handling millions of events per second.</p>
+<div class="flex gap-2 mt-auto pt-4">
+<span class="font-code-sm text-code-sm bg-primary/10 text-primary px-2 py-1 rounded">React</span>
+<span class="font-code-sm text-code-sm bg-tertiary/10 text-tertiary px-2 py-1 rounded">Node.js</span>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glow-border bg-surface-container-low rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] hover:border-white/10">
+<div class="h-48 rounded bg-surface-dim overflow-hidden relative">
+<img class="object-cover w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-105" data-alt="Abstract 3D rendering of a blockchain network or decentralized system architecture. Glowing interconnected nodes float in a deep dark void with subtle wireframe elements. The color palette revolves around electric blues and stark whites against a charcoal background. The mood is futuristic, highly technical, and implies scalability and complex engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB3xer3rp-kER3slFlVLt6vU2oPosYSsRww6ItGCEpgSXA0-TqRBrHJKi7jkNolYohqTVKjD-y5uHTYS_OpvKUhpUP9KTWhXqJVAcIxWskXN6eZt-YhGOrcorGS3G-WlNCw15ui6PdWVaA5tLeuqgRSaZdjytc314CtjzD9Vz3kthI-5EkIC0zydBW0s8SBPT_whes71Od5IrPjcKrpsbAcMWDk83SJFzqro_FOqWYRq7YB2V7gfaBXM9DP8dxJqOquFH_Nw7hyLs"/>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors">Decentralized Exchange</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Led the frontend engineering for a high-volume Web3 trading platform.</p>
+<div class="flex gap-2 mt-auto pt-4">
+<span class="font-code-sm text-code-sm bg-primary/10 text-primary px-2 py-1 rounded">Next.js</span>
+<span class="font-code-sm text-code-sm bg-secondary/10 text-secondary px-2 py-1 rounded">Web3</span>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glow-border bg-surface-container-low rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_0_30px_rgba(173,198,255,0.15)] hover:border-white/10">
+<div class="h-48 rounded bg-surface-dim overflow-hidden relative">
+<img class="object-cover w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-105" data-alt="Close-up shot of lines of code glowing on a computer monitor in a dark room. The code syntax is highlighted in vibrant modern colors like neon green, pink, and bright blue against a deep black editor background. The image evokes a sense of deep focus, software development, and technical expertise. The composition is tight, emphasizing the complexity of the script." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8n_tYsbNE9gM5DChOe2WmbxcH9EjX4FSf2SxpQLFdEC0xYIeOp0640oq9q05Xbpv-TMgpUleEJ-dbDicGKld43KyQryFhTbLyFG0UmQtx2Sjms7d-1shweKZr1twaYxnQ2KNDFiqs1uKezsFMLQen9zdxAkWEsa02dT8H00gdW9L9QqdmWdrksiJqa12XVhXWVfSDjS-naoY4JC89YnUiyl0MXOJRQeewowKVcfpIB-siT71BV6GQTC3CffG8aZ35EpTkRUTyqF8"/>
+</div>
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors">AI Code Assistant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Built the VS Code extension interface for an LLM-powered coding companion.</p>
+<div class="flex gap-2 mt-auto pt-4">
+<span class="font-code-sm text-code-sm bg-primary/10 text-primary px-2 py-1 rounded">TypeScript</span>
+<span class="font-code-sm text-code-sm bg-surface-bright text-on-surface px-2 py-1 rounded">LLMs</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Architecture Preview -->
+<section class="py-section-gap-md reveal-on-scroll">
+<div class="bg-surface-container-high rounded-xl p-8 border border-white/5 relative overflow-hidden dot-grid flex flex-col md:flex-row items-center gap-8">
+<div class="z-10 flex-1">
+<h2 class="font-headline-lg text-headline-lg mb-4">System Architecture</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 max-w-lg">
+                        Explore detailed teardowns of scalable systems, microservices, and high-performance cloud infrastructures I've designed.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline" href="#">
+                        View Architecture Patterns <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="flex-1 w-full h-64 border border-outline-variant bg-surface/50 backdrop-blur rounded flex items-center justify-center relative">
+<!-- Abstract diagram representation -->
+<div class="flex gap-4 items-center">
+<div class="w-16 h-16 bg-surface-container border border-outline-variant rounded shadow-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">api</span>
+</div>
+<div class="w-16 h-[1px] bg-primary relative">
+<div class="absolute inset-0 bg-primary shadow-[0_0_8px_#adc6ff] animate-pulse"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="w-16 h-16 bg-surface-container border border-outline-variant rounded shadow-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div class="w-16 h-16 bg-surface-container border border-outline-variant rounded shadow-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">cloud</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Writing & Insights -->
+<section class="py-section-gap-md reveal-on-scroll stagger-parent">
+<h2 class="font-headline-lg text-headline-lg mb-8">Writing &amp; Insights</h2>
+<div class="flex flex-col gap-4">
+<a class="stagger-item group flex flex-col md:flex-row justify-between items-baseline p-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors">Optimizing React Performance in Large Scale Applications</h3>
+<div class="flex gap-4 font-code-sm text-code-sm text-on-surface-variant">
+<span>React</span>
+<span>Performance</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-outline mt-4 md:mt-0">Oct 12, 2024</span>
+</a>
+<a class="stagger-item group flex flex-col md:flex-row justify-between items-baseline p-6 border-b border-outline-variant hover:bg-surface-container-low transition-colors" href="#">
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors">Designing Idempotent APIs for Financial Systems</h3>
+<div class="flex gap-4 font-code-sm text-code-sm text-on-surface-variant">
+<span>System Design</span>
+<span>Backend</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-outline mt-4 md:mt-0">Sep 28, 2024</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full py-20 border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="text-label-md font-headline-md text-on-surface">
+                DevArchitect
+            </div>
+<div class="text-tertiary font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all">
+                © 2024 Senior Product Engineer. Built with Precision.
+            </div>
+<div class="flex space-x-6">
+<a class="text-on-surface-variant font-code-sm text-code-sm hover:text-primary transition-all" href="#">GitHub</a>
+<a class="text-on-surface-variant font-code-sm text-code-sm hover:text-primary transition-all" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-code-sm text-code-sm hover:text-primary transition-all" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+</body></html>

@@ -1,10 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&family=Architects+Daughter&family=Caveat:wght@600&family=Kalam:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+:root {
+  /* Dark Mode Palette: Pure Black for entire site / other pages */
+  --bg-primary: #09090b; /* Pure Obsidian Black */
+  --bg-secondary: #121215; /* Midnight surface */
+  --bg-tertiary: #18181b; /* Muted surface */
+  --bg-card: #111114; /* Card surface */
+  --border: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* Typography / Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverse: #09090b;
+
+  /* Accent Colors */
+  --primary: #38bdf8; /* Cyber Sky Blue */
+  --secondary: #818cf8; /* Deep Indigo */
+  --tertiary: #34d399; /* Emerald Success */
+  --accent: #f59e0b; /* Amber */
+
+  /* Landing Page / Hero Specific in Dark Mode: Deep Midnight Blue Tint */
+  --hero-cover-bg: #070e1f;
+  --gradient-hero: radial-gradient(ellipse 80% 65% at 50% 35%, #0f2248 0%, #081024 55%, #050814 100%);
+  --gradient-card: linear-gradient(135deg, #111114 0%, #18181b 100%);
+  --gradient-glow: rgba(56, 189, 248, 0.18);
+
+  /* Shadows */
+  --shadow-card: 0 0 0 1px var(--border), 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px var(--gradient-glow);
+
+  /* Custom Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-/* * {
-  background-color: #e4e0e1;
-} */
+
+/* Light mode overrides: Other pages are Warm Paper Beige, Landing Page Hero is Royal Cobalt Blue */
+.light, [data-theme="light"] {
+  /* Other pages / general site: Warm Editorial Paper Beige */
+  --bg-primary: #faf9f5; /* Warm Paper Beige */
+  --bg-secondary: #f3f1ea; /* Secondary soft beige */
+  --bg-tertiary: #eae7dd; /* Muted warm beige */
+  --bg-card: #ffffff; /* Crisp white cards */
+  --border: rgba(0, 0, 0, 0.1); /* Subtle dark border on beige */
+  --border-subtle: rgba(0, 0, 0, 0.05);
+
+  --text-primary: #18181b; /* Crisp dark charcoal */
+  --text-secondary: #52525b; /* Muted charcoal */
+  --text-muted: #71717a; /* Soft gray */
+  --text-inverse: #ffffff;
+
+  --primary: #2563eb; /* Royal blue accent */
+  --secondary: #4f46e5;
+  --tertiary: #059669;
+  --accent: #d97706;
+
+  /* Landing Page Hero Specific in Light Mode: Royal Ocean Cobalt Blue (Matching Image 2) */
+  --hero-cover-bg: #0c2357;
+  --gradient-hero: radial-gradient(ellipse 85% 75% at 50% 32%, #1e4bb8 0%, #173b94 40%, #0e245c 80%, #09173d 100%);
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f7f6f2 100%);
+  --gradient-glow: rgba(37, 99, 235, 0.2);
+  --shadow-card: 0 0 0 1px var(--border), 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* No CSS smooth-scroll: it fights ScrollTrigger pinning/scrub and makes the hero stutter. */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Technical Precision Vibe */
+@layer utilities {
+  .dot-grid {
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  
+  .glow-border {
+    position: relative;
+    border: 1px solid var(--border);
+  }
+
+  .glow-border:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-smooth);
+  }
+
+  .noise-overlay {
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    .hero-bat-mask {
+      mask: url(#hero-bat-mask);
+      -webkit-mask: url(#hero-bat-mask);
+    }
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Reading Progress Indicator */
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Hide default cursor on desktop except inside text inputs */
+@media (min-width: 768px) {
+  .custom-cursor-enabled, 
+  .custom-cursor-enabled *:not(input):not(textarea):not(select) {
+    cursor: none !important;
+  }
+}
+
+/* Bat portal hero (components/Header.jsx) */
+.hero-layers {
+  --bat-w: clamp(120px, 16vw, 240px);
+  --bat-x: max(13vw, calc(var(--bat-w) / 2 + 1.25rem)); /* bottom-left */
+  --bat-y: 80dvh;
+  --bat-h: calc(var(--bat-w) * 0.5556); /* viewBox 360x200 */
+}
+.bat-cover {
+  -webkit-mask: linear-gradient(#000 0 0),
+    var(--bat-mask) calc(var(--bat-x) - var(--bat-w) / 2) calc(var(--bat-y) - var(--bat-h) / 2) / var(--bat-w) var(--bat-h) no-repeat;
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0),
+    var(--bat-mask) calc(var(--bat-x) - var(--bat-w) / 2) calc(var(--bat-y) - var(--bat-h) / 2) / var(--bat-w) var(--bat-h) no-repeat;
+  mask-composite: exclude;
+}
+
+@keyframes scroll-cue {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+  51% { transform: scaleX(1); transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}

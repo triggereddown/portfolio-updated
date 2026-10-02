@@ -1,46 +1,41 @@
 "use client";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+
+import React from "react";
 import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import Services from "@/components/Services";
-import Work from "@/components/Work";
-import { useEffect, useState } from "react";
+import Experience from "@/components/sections/Experience";
+import Projects from "@/components/sections/Projects";
+import TechStack from "@/components/sections/TechStack";
+import Blog from "@/components/sections/Blog";
+import Testimonials from "@/components/sections/Testimonials";
+import Achievements from "@/components/sections/Achievements";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark").matches)
-    ) {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-    }
-  }, [isDarkMode]);
   return (
     <>
-      <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <Header isDarkMode={isDarkMode} />
-      <About isDarkMode={isDarkMode} />
-      {/* <Services isDarkMode={isDarkMode} /> */}
-      <Work isDarkMode={isDarkMode} />
-      <Contact isDarkMode={isDarkMode} />
-      <Footer isDarkMode={isDarkMode} />
+      {/* 4.1 Header with Batman Zoom-through Transition into About */}
+      <Header />
+
+      {/* 4.3 Alternate milestones vertical timeline */}
+      <Experience />
+
+      {/* 4.4 Projects grid with tabs */}
+      <Projects />
+
+      {/* 4.5 Scrolling marquee reels and specialization grids */}
+      <TechStack />
+
+      {/* 4.7 Technical blog writing feeds */}
+      <Blog />
+
+      {/* 4.8 Testimonial carousel loop */}
+      <Testimonials />
+
+      {/* 4.9 Milestones lists achievements */}
+      <Achievements />
+
+      {/* 4.10 Direct validation contact form */}
+      <Contact />
     </>
   );
 }
