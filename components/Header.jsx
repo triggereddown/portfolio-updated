@@ -17,6 +17,7 @@ export default function Header() {
   const maskCutoutGRef = useRef(null);
   const strokeGRef = useRef(null);
   const strokeSvgRef = useRef(null);
+  const headingRef = useRef(null);
 
   useLayoutEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -26,17 +27,32 @@ export default function Header() {
 
     // =========================================================================
     // DESKTOP & TABLET ONLY (>= 768px)
-    // Batman Aperture Zoom-through Pin Animation untouched for web & tablets
+    // Batman Aperture Zoom-through Pin Animation centered in hero headline
     // =========================================================================
     mm.add("(min-width: 768px)", () => {
       const getCoords = () => {
         const w = window.innerWidth;
         const h = window.innerHeight;
-        const cx = Math.max(120, Math.min(240, w * 0.12));
-        const cy = h * 0.78;
-        const s0 = Math.max(0.32, Math.min(0.42, (w * 0.12) / 388));
+
+        let cx = w / 2;
+        let cy = h * 0.44;
+
+        if (headingRef.current) {
+          const rect = headingRef.current.getBoundingClientRect();
+          cx = rect.left + rect.width / 2;
+          // Exact center between Thoughtful and by design + 10px lower vertically
+          cy = rect.top + rect.height / 2 + 30;
+        }
+
+        // Calibrated resting scale s0 for the sleek Batman logo nestled between lines
+        // Bounding box is 387.5 x 234. Target width ~58-64px on desktop
+        const s0 = Math.max(0.20, Math.min(0.165, (w * 0.04) / 388));
+
+        // From center (cx, cy), distance to furthest screen corner
+        const maxDist = Math.hypot(Math.max(cx, w - cx), Math.max(cy, h - cy));
         // Calibrated scale to clear all 4 screen corners and text boundaries with zero dead air
-        const sMax = Math.max(17.5, Math.ceil(Math.hypot(w - cx, cy) / 82));
+        const sMax = Math.max(18, Math.ceil(maxDist / 48));
+
         return { cx, cy, s0, sMax };
       };
 
@@ -247,8 +263,11 @@ export default function Header() {
           </div>
 
           <div className="relative inline-block">
-            {/* Exact typography matching reference image 3 */}
-            <h1 className="text-6xl sm:text-7xl md:text-[110px] lg:text-[140px] font-playfair font-medium leading-[1] md:leading-[0.95] tracking-tight text-white drop-shadow-sm text-center">
+            {/* Exact typography matching reference image with tight cohesive leading */}
+            <h1
+              ref={headingRef}
+              className="text-6xl sm:text-7xl md:text-[110px] lg:text-[140px] font-playfair font-medium leading-[1] md:leading-[1.04] tracking-tight text-white drop-shadow-sm text-center"
+            >
               Thoughtful
               <br />
               <span className="italic font-light pr-2 md:pr-4">by</span>
@@ -286,12 +305,12 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Scroll Cue sitting right below the Batman Logo on Bottom-Left (Desktop & Tablet only) */}
+        {/* Scroll Cue in bottom corner balancing profile card (Desktop & Tablet only) */}
         <div
           className="hero-meta hidden md:flex absolute items-center gap-2.5 font-mono text-[9px] tracking-[0.25em] uppercase text-white/50 pointer-events-auto"
           style={{
-            left: "clamp(2rem, 7vw, 6rem)",
-            bottom: "calc(22vh - 2.8rem)",
+            left: "clamp(2rem, 6vw, 5rem)",
+            bottom: "2.5rem",
           }}
         >
           <span className="block w-6 h-px bg-white/40 animate-pulse" />
@@ -365,7 +384,7 @@ export default function Header() {
             {/* Black cuts out a transparent window shaped like Batman */}
             <g
               ref={maskCutoutGRef}
-              transform="translate(180, 600) scale(0.36) translate(-193.7, -117)"
+              transform="translate(768, 358) scale(0.16) translate(-193.7, -117)"
               style={{ willChange: "transform", opacity: 0 }}
             >
               <path d={BAT_PATH} fill="black" />
@@ -394,7 +413,7 @@ export default function Header() {
       >
         <g
           ref={strokeGRef}
-          transform="translate(180, 600) scale(0.36) translate(-193.7, -117)"
+          transform="translate(768, 358) scale(0.16) translate(-193.7, -117)"
           style={{ willChange: "transform", opacity: 0 }}
         >
           {/* Subtle cyan glow */}
