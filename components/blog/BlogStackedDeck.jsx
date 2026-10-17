@@ -141,6 +141,10 @@ export default function BlogStackedDeck({
                         <img
                           src={post.coverImage.url}
                           alt={post.title}
+                          width={800}
+                          height={600}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-102"
                         />
 

@@ -10,7 +10,7 @@ const STAGES = [
     name: "Hero",
     title: "Ready to Build",
     prop: "Cape & Bat-Suit",
-    avatar: "/avatar/standing.png",
+    avatar: "/avatar/standing.webp",
     color: "#3b82f6",
   },
   {
@@ -19,7 +19,7 @@ const STAGES = [
     name: "About",
     title: "System Design",
     prop: "Books",
-    avatar: "/avatar/learning.png",
+    avatar: "/avatar/learning.webp",
     color: "#60a5fa",
   },
   {
@@ -28,7 +28,7 @@ const STAGES = [
     name: "Exp",
     title: "Pushing Systems",
     prop: "Stack Blocks",
-    avatar: "/avatar/stack.png",
+    avatar: "/avatar/stack.webp",
     color: "#38bdf8",
   },
   {
@@ -37,7 +37,7 @@ const STAGES = [
     name: "Work",
     title: "Shipping Products",
     prop: "Bat Laptop",
-    avatar: "/avatar/idea.png",
+    avatar: "/avatar/idea.webp",
     color: "#f59e0b",
   },
   {
@@ -46,7 +46,7 @@ const STAGES = [
     name: "Stack",
     title: "Deploying Cloud",
     prop: "Deploy Pipeline",
-    avatar: "/avatar/deployment.png",
+    avatar: "/avatar/deployment.webp",
     color: "#10b981",
   },
   {
@@ -55,7 +55,7 @@ const STAGES = [
     name: "Notes",
     title: "Architecture Planning",
     prop: "Thought Bubble",
-    avatar: "/avatar/planning.png",
+    avatar: "/avatar/planning.webp",
     color: "#818cf8",
   },
   {
@@ -64,7 +64,7 @@ const STAGES = [
     name: "Contact",
     title: "Mission Complete",
     prop: "Headphones & Cat",
-    avatar: "/avatar/relax.png",
+    avatar: "/avatar/relax.webp",
     color: "#059669",
   },
 ];

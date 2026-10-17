@@ -120,6 +120,9 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="Deep Moitra"
+            width={438}
+            height={134}
+            decoding="async"
             className={`h-8 w-auto object-contain transition-opacity duration-300 ${
               isHeroBanner ? "hidden" : "block dark:hidden"
             }`}
@@ -128,6 +131,9 @@ export default function Navbar() {
           <img
             src="/logo_dark.png"
             alt="Deep Moitra"
+            width={920}
+            height={271}
+            decoding="async"
             className={`h-8 w-auto object-contain transition-opacity duration-300 ${
               isHeroBanner ? "block" : "hidden dark:block"
             }`}

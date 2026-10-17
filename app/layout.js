@@ -37,10 +37,14 @@ export default function RootLayout({ children }) {
       className={`${fontDisplay.variable} ${fontBody.variable} ${fontMono.variable} ${fontCormorant.variable}`}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
+                try { history.scrollRestoration = 'manual'; window.scrollTo(0, 0); } catch (e) {}
+                var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600&family=Kalam:wght@400;700&display=swap'; document.head.appendChild(l);
                 try {
                   var t = localStorage.getItem('theme');
                   if (t === 'light') {

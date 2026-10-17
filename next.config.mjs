@@ -5,6 +5,12 @@ const nextConfig = {
     // the FlatCompat parser-serialization error in Next.js 15.
     ignoreDuringBuilds: true,
   },
+  compress: true,
+  poweredByHeader: false,
+  experimental: {
+    // tree-shake big barrel packages
+    optimizePackageImports: ["lucide-react", "motion", "recharts"],
+  },
 };
 
 export default nextConfig;

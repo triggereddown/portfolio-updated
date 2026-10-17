@@ -161,6 +161,10 @@ export default function ProjectsStackedDeck({
                         <img
                           src={project.coverImage?.url || "/work-1.png"}
                           alt={project.title}
+                          width={800}
+                          height={600}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-102"
                         />
 
