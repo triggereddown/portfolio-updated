@@ -268,10 +268,10 @@ export default function Header() {
               ref={headingRef}
               className="text-6xl sm:text-7xl md:text-[110px] lg:text-[140px] font-playfair font-medium leading-[1] md:leading-[1.04] tracking-tight text-white drop-shadow-sm text-center"
             >
-              Thoughtful
+              Engineered
               <br />
-              <span className="italic font-light pr-2 md:pr-4">by</span>
-              design
+              <span className="italic font-light pr-2 md:pr-4">to</span>
+              Matter
             </h1>
           </div>
 
